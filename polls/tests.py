@@ -96,3 +96,17 @@ class QuestionIndexViewTests(TestCase):
             response.context['latest_question_list'],
             [question1, question2]
         )
+
+
+class QuestionResultsViewTests(TestCase):
+    def test_no_results(self):
+        """
+        If no results exist, an appropriate message is displayed.
+
+        question = create_question(question_text="Published question.", days=30)
+
+        response = self.client.get(reverse('polls:results', kwargs={"pk": question.pk}))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "No results published.")
+        self.assertQuerysetEqual(response.context['results_list'], [])
+        """
